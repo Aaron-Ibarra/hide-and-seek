@@ -2,6 +2,7 @@
 const shedButton = document.getElementById('shed-button');
 const treeButton = document.getElementById('tree-button');
 const boulderButton = document.getElementById('boulder-button');
+const resetButton = document.getElementById('reset-btn');
 
 const shedContainer = document.getElementById('shed-container');
 const treeContainer = document.getElementById('tree-container');
@@ -69,3 +70,9 @@ function updateScore() {
     winsEl.textContent = correctGuesses;
     lossesEl.textContent = totalGuesses - correctGuesses;
 }
+
+resetButton.addEventListener('click', () => {
+    totalGuesses = 0;
+    correctGuesses = 0;
+    updateScore();
+});

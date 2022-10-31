@@ -55,11 +55,17 @@ function handleGuess(correctSpot, userGuess) {
         correctGuesses++;
     }
     // update the DOM to show this change to the user (including the losses, not tracked directly in state)
-    // updateScore();
+    updateScore();
 }
 
 function styleReset() {
     treeContainer.classList.remove('face');
     shedContainer.classList.remove('face');
     boulderContainer.classList.remove('face');
+}
+
+function updateScore() {
+    totalEl.textContent = totalGuesses;
+    winsEl.textContent = correctGuesses;
+    lossesEl.textContent = totalGuesses - correctGuesses;
 }
